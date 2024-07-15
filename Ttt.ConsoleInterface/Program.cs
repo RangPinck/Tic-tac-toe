@@ -10,7 +10,7 @@
 
             if (choiceUser == 0) return;
 
-
+            dialogWithUser = new DialogWithUser();
         }
     }
 }

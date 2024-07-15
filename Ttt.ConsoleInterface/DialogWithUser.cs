@@ -8,7 +8,7 @@ namespace Ttt.ConsoleInterface
     public class DialogWithUser
     {
         /// <summary>
-        /// Конструктор класса для общения с пользователем
+        /// Конструктор класса для общения с пользователем - запуск программы
         /// </summary>
         /// <param name="choiceUser">ссылочный парамет, который принимает в итоге значения выбарнное пользователем</param>
         /// <remarks>
@@ -28,7 +28,7 @@ namespace Ttt.ConsoleInterface
             //Console.WriteLine("3. Play with a friend remotely;");
             //Console.WriteLine("4. Play with a random player;");
             Console.WriteLine("Another. Exit");
-            Console.WriteLine("Yuor choice:\t");
+            Console.Write("Yuor choice:\t");
             try
             {
                 string line = Console.ReadLine();
@@ -38,17 +38,33 @@ namespace Ttt.ConsoleInterface
                     );
 
                 if (choiceUser < 1 || choiceUser > 4)
+                {
                     choiceUser = 0;
                     throw new ExitException();
+                }
             }
             catch
             {
                 Console.WriteLine("You have chosen to exit the program.");
-                Console.WriteLine("Goodbye");
-                return;
+                ProgrammEndMessage();
             }
         }
 
+        /// <summary>
+        /// Конструктор клааска для общения с пользователем - закрытие программы
+        /// </summary>
+        public DialogWithUser()
+        {
+            Console.WriteLine("Thanks for playing!");
+            ProgrammEndMessage();
+        }
 
+        /// <summary>
+        /// метод для вывода сообщения прощаяния с пользователем
+        /// </summary>
+        private void ProgrammEndMessage()
+        {
+            Console.WriteLine("Goodbye");
+        }
     }
 }
