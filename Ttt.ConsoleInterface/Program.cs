@@ -4,8 +4,12 @@
     {
         static void Main(string[] args)
         {
-            int chouseUser = 0 ;
-            DialogWithUser dialogWithUser = new DialogWithUser(ref chouseUser);
+            int choiceUser = 0;
+
+            DialogWithUser dialogWithUser = new DialogWithUser(ref choiceUser);
+
+            if (choiceUser == 0) return;
+
 
         }
     }
